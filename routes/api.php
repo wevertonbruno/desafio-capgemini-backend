@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/* Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
-});
+}); */
+
+Route::get('/transactions', 'TransactionController@get');
+Route::get('/transactions/ammount', 'TransactionController@ammount');
+Route::post('/transactions/transfer', 'TransactionController@transfer');
+Route::post('/transactions/receive', 'TransactionController@receive');
