@@ -36,7 +36,7 @@ class TransactionController extends Controller
 
             return response()->json([
                 'success' => true,
-                'data' => $data
+                'transactions' => $data
             ], 201);
         } catch (Exception $e) {
             return response()->json([
@@ -53,9 +53,7 @@ class TransactionController extends Controller
 
             return response()->json([
                 'success' => true,
-                'data' => [
-                    "ammount" => $data
-                ]
+                "ammount" => $data
             ], 201);
         } catch (Exception $e) {
             return response()->json([
@@ -73,9 +71,7 @@ class TransactionController extends Controller
 
             return response()->json([
                 'success' => true,
-                'data' => [
-                    "ammount" => $data
-                ]
+                'transaction' => $data
             ], 201);
         } catch (InsufficientFundsException $e) {
             return response()->json([
@@ -99,9 +95,7 @@ class TransactionController extends Controller
 
             return response()->json([
                 'success' => true,
-                'data' => [
-                    "ammount" => $data
-                ]
+                'transaction' => $data
             ], 201);
         } catch (Exception $e) {
             return response()->json([
